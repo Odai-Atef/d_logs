@@ -1,4 +1,4 @@
-# Custom Logs File generatior for LOGS HUB
+# Custom Logs File generatior for LOGS HUB Nodejs
 
 ### Avaliable functions 
 We have 5 types of logs:
