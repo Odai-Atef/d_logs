@@ -1,14 +1,18 @@
-# Custom Logs File generatior for LOGS HUB Nodejs
+# Custom Logs File generator for LOGS HUB Node js
 
-### Avaliable functions 
+### Installation
+
+npm i dmmil_logs
+
+### Available functions 
 We have 5 types of logs:
  - warning
  - error
  - critical
  - info
 
-### Function Paramters
-For each function we have five paramaters three of them are required and the others are optional
+### Function Parameters
+For each function we have five parameters three of them are required and the others are optional
  - message (*)
  - level (*)
  - application (*)
@@ -18,12 +22,13 @@ For each function we have five paramaters three of them are required and the oth
 ### env file
 The file contains the path of logs file and code for each level
 
-### Examples
+### Usage & Examples
+- const logs=require("dmmil_logs")
 
-- warning("MESSAGE","NEWS",3,{"key":"value"});
-- error("MESSAGE","NEWS",3);
-- info("MESSAGE","NEWS");
-- critical("MESSAGE","NEWS",null,{"key":"value"});
+- logs.warning("MESSAGE","NEWS",3,{"key":"value"});
+- logs.error("MESSAGE","NEWS",3);
+- logs.info("MESSAGE","NEWS");
+- logs.critical("MESSAGE","NEWS",null,{"key":"value"});
 
 
 License

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const util = require('util');
-const env=require('dotenv').config().parsed
-
+const path=require('path');
+const env=require('dotenv').config({ "path":path.resolve(__dirname,".env") }).parsed
 function log(msg,level,application,user_id,extra_data){
     var filename=Math.floor(Date.now() / 1000);
     var log_file = fs.createWriteStream(env.DIR + filename+'.log', {flags : 'w'});
