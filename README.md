@@ -20,10 +20,10 @@ The file contains the path of logs file and code for each level
 
 ### Examples
 
-warning("MESSAGE","NEWS",3,{"key":"value"});
-error("MESSAGE","NEWS",3);
-info("MESSAGE","NEWS");
-critical("MESSAGE","NEWS",null,{"key":"value"});
+- warning("MESSAGE","NEWS",3,{"key":"value"});
+- error("MESSAGE","NEWS",3);
+- info("MESSAGE","NEWS");
+- critical("MESSAGE","NEWS",null,{"key":"value"});
 
 
 License
