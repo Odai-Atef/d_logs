@@ -23,7 +23,7 @@ function log(msg, level, application, execution_time, environment, user_id, extr
 
 function notify(msg) {
     request.post(
-        'NOTIFY_LINK',
+        'NOTIFY_LINK', 
         {"message": msg, "channel": msg['application']},
         function (error, response, body) {
         }
