@@ -12,7 +12,8 @@ function log(msg,level,application,execution_time,environment,user_id,extra_data
         "environment":environment,
         "user_id":user_id,
         "execution_time":execution_time,
-        "extra_data":extra_data
+        "extra_data":extra_data,
+        "timestamp":Date.now()
     }
     log_file.write(JSON.stringify(json) + '\n');
 }

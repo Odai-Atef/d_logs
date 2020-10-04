@@ -2,7 +2,7 @@
 
 ### Installation
 
-npm i dmmil_logs
+npm i logs_hub
 
 ### Available functions 
 We have 5 types of logs:
