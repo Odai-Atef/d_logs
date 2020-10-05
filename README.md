@@ -2,10 +2,10 @@
 
 ### Installation
 
-npm i logs_hub
+npm i logs_hub_nodejs
 
 ### Available functions 
-We have 5 types of logs:
+We have 4 types of logs:
  - warning
  - error
  - critical
