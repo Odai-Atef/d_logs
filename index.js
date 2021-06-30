@@ -5,8 +5,8 @@ const request = require('request');
 const env = require('dotenv').config({"path": path.resolve(__dirname, ".env")}).parsed
 
 function log(msg, level, application, execution_time, environment, user_id, extra_data) {
-    var filename = Math.floor(Date.now() / 1000);
-    var log_file = fs.createWriteStream(env.DIR + filename + '.log', {flags: 'w'});
+    var filename = new Date().toISOString().slice(0, 10);
+    filename = Date.parse(filename);
     var json = {
         "message": msg,
         "level": level,
@@ -17,8 +17,9 @@ function log(msg, level, application, execution_time, environment, user_id, extr
         "extra_data": extra_data,
         "timestamp": Date.now()
     }
-    log_file.write(JSON.stringify(json) + '\n');
-    return json;
+    fs.appendFile(env.DIR+'/'+filename + '.log', JSON.stringify(json), function (err) {
+        if (err) throw err;
+    });    return json;
 }
 
 function notify(msg) {
