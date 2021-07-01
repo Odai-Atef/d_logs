@@ -2,11 +2,11 @@ const fs = require('fs');
 const util = require('util');
 const path = require('path');
 const request = require('request');
-const env = require('dotenv').config({"path": path.resolve(__dirname, ".env")}).parsed
+const env = require('dotenv').config({"path": path.resolve(path.dirname(require.main.filename), ".env")}).parsed
 
 function log(msg, level, application, execution_time, environment, user_id, extra_data) {
-    var filename = new Date().toISOString().slice(0, 10);
-    filename = Date.parse(filename);
+    var filename = new Date().toISOString().slice(0, 10).split('-').join('');
+    // filename = Date.parse(filename);
     var json = {
         "message": msg,
         "level": level,
@@ -17,14 +17,14 @@ function log(msg, level, application, execution_time, environment, user_id, extr
         "extra_data": extra_data,
         "timestamp": Date.now()
     }
-    fs.appendFile(env.DIR+'/'+filename + '.log', JSON.stringify(json), function (err) {
+    fs.appendFile(env.DIR+filename + '.log', JSON.stringify(json), function (err) {
         if (err) throw err;
     });    return json;
 }
 
 function notify(msg) {
     request.post(
-        'NOTIFY_LINK', 
+        'NOTIFY_LINK',
         {"message": msg, "channel": msg['application']},
         function (error, response, body) {
         }
