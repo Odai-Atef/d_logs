@@ -14,7 +14,7 @@ function log(msg, level, application, execution_time, environment, user_id, extr
         "environment": environment,
         "user_id": user_id,
         "execution_time": execution_time,
-        "extra_data": extra_data,
+        "extra_data": JSON.stringify({extra: extra_data}),
         "timestamp": Date.now()
     }
     fs.appendFile(env.DIR+filename + '.log', JSON.stringify(json), function (err) {
